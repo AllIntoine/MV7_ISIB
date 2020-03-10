@@ -2,24 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTerritory : MonoBehaviour
+public class LisardSpawner : MonoBehaviour
 {
     public BoxCollider territory;
     GameObject player;
     bool playerInTerritory;
 
     public GameObject enemyx;
-    EnnemyBehavior enemy;
+    EnemyLisard enemy;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        enemy = enemyx.GetComponent<EnnemyBehavior>();
+        enemy = enemyx.GetComponent<EnemyLisard>();
         playerInTerritory = false;
     }
 
     void Update()
     {
+        enemy.test();
+
         if (playerInTerritory == true)
         {
             enemy.MoveToPlayer();
